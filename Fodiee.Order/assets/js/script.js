@@ -1,5 +1,4 @@
 
-
 const scrollAnimate= {
     run(){
         window.addEventListener('scroll',() => {
@@ -21,11 +20,13 @@ const scrollAnimate= {
         const heightScreen = screen.height;
         return heightScroll > heightScreen ? scrollTopBtn.classList.add('showScrollTopBtn') : scrollTopBtn.classList.remove('showScrollTopBtn');
     },
+
     showScrollTopBtn(heightScroll){
         const scrollTopBtn = document.querySelector('.scrollUp'); //get Class Scroll Up Button
         let heightScreen = screen.height;
         return heightScroll > heightScreen ? scrollTopBtn.classList.add('showScrollTopBtn') : scrollTopBtn.classList.remove('showScrollTopBtn');
     },
+
     menuScroll(heightScroll){
         const navbarItems = document.querySelectorAll('.navbar__item');
     
@@ -42,6 +43,7 @@ const scrollAnimate= {
             };
         })
     },
+    
     animationPartItem(heightScroll){
         //Add Class 'motionX' or 'motionY' in animate Elements
         const getX_MotionItems = document.querySelectorAll('.motionX');
@@ -102,7 +104,7 @@ function offsetsTop(){
 }
 
 function addClassScrollX(elements, positionLeft, positionRight) {
-    removeClassScrollX(elements);
+    // removeClassScrollX(elements);
     elements[positionLeft].classList.add('inMotionLeft');
     elements[positionRight].classList.add('inMotionRight');
 }
@@ -114,7 +116,7 @@ function removeClassScrollX(elements){
 }
 
 function addScrollY(elements){
-    removeScrollY(elements);
+    // removeScrollY(elements);
     for (let index = 0; index < elements.length; index++) {
         elements[index].style.animationDelay = index * 0.25 + 's';
         elements[index].classList.add('downMotion');
