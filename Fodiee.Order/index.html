@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fodiee-Order</title>
+
+    <!-- file css  -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
+
+    <!-- Google font  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Font awesome  -->
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.2-web/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="wraper">
+                <a href="#" class="logo">
+                    <img src="assets/images/logo.svg" alt="">
+                </a>
+                <nav>
+                    <ul class="navbar">
+                        <li class="navbar__item active"><a href="#">home</a></li>
+                        <li class="navbar__item"><a href="#">menu</a></li>
+                        <li class="navbar__item"><a href="#">about</a></li>
+                        <li class="navbar__item"><a href="#">services</a></li>
+                        <li class="navbar__item"><a href="#">get app</a></li>
+                        <li class="navbar__item"><button class="navbar__item-book">book now</button></li>
+                    </ul>
+                    <div class="mobile">
+                        <label for="nav-mobile-input" class="mobile__iconBars">
+                            <i class="fas fa-bars"></i>
+                        </label>
+                        <input type="checkbox" name="" class="mobile__check" id="nav-mobile-input">
+                        <label for="nav-mobile-input" class="mobile__overlay"></label>
+
+                        <div class="mobile__nav">
+                            <div class="mobile__nav-top">
+                                <div class="top__logo">
+                                    <img src="assets/images/logo.svg" alt="">
+                                </div>
+                                <label for="nav-mobile-input" class="top__close">
+                                    <i class="fas fa-times"></i>
+                                </label>
+                            </div>
+                            <ul class="mobile__nav-navbar">
+                                <li class="mobile__navbar-item active"><a href="#">home</a></li>
+                                <li class="mobile__navbar-item"><a href="#">menu</a></li>
+                                <li class="mobile__navbar-item"><a href="#">about</a></li>
+                                <li class="mobile__navbar-item"><a href="#">services</a></li>
+                                <li class="mobile__navbar-item"><a href="#">get app</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Start restaurant  -->
+    <section class="restaurant">
+        <div class="container restaurant__wraper">
+            <div class="restaurant__wraper-content motionX inMotionLeft">
+                <div class="content__text">
+                    <h3>Restaurant</h3>
+                    <h1>Enjoy Our Majestic Meals</h1>
+                    <p>Vestibulum sed augue ac lorem rutrum congue. Donec cursus mollis sapien, non vulputate odio congue id. Sed mattis, tortor nec facilisis laoreet, mauris magna finibus nisl, eu pulvinar erat libero in turpis.</p>
+                </div>
+                <div class="content__search">
+                    <input type="text" name="search" placeholder="Search food...">
+                    <button class="content__search-btn">Search</button>
+                </div>
+                <div class="content__network">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="restaurant__wraper-img motionX inMotionRight">
+                <img src="assets/images/hero-img.png" alt="">
+            </div>
+        </div>
+        <button class="scrollUp" onclick="scrollToTop()">
+            <img src="assets/images/rocket.svg" alt="">
+        </button>
+    </section>
+    <!-- End restaurant  -->
+
+    <!-- Start menu food  -->
+    <section class="menu">
+        <div class="container">
+            <div class="menu__content">
+                <h3>Menu</h3>
+                <h2>Popular Dishes</h2>
+                <p>Sed tincidunt sapien in augue aliquet ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque blandit tortor nunc, in consectetur justo pharetra vel.</p>
+            </div>
+
+            <div class="row menu__food">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="menu__food-item motionY">
+                        <div class="item__img">
+                            <img src="assets/images/pizza.png" alt="">
+                        </div>
+                        <div class="item__content">
+                            <h4>Pizza</h4>
+                            <p>Eat luctus est vestibulum vel. Integer pulvinar nibh quis diam ullamcorper.</p>
+                            <div class="item__content-price">
+                                <span class="price__money">
+                                    $ &nbsp 10.22
+                                </span>
+                                <button>add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="menu__food-item motionY ">
+                        <div class="item__img">
+                            <img src="assets/images/burger.png" alt="">
+                        </div>
+                        <div class="item__content">
+                            <h4>Burger</h4>
+                            <p>Eat luctus est vestibulum vel. Integer pulvinar nibh quis diam ullamcorper.</p>
+                            <div class="item__content-price">
+                                <span class="price__money">
+                                    $ &nbsp  9.99
+                                </span>
+                                <button>add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="menu__food-item motionY ">
+                        <div class="item__img">
+                            <img src="assets/images/salad.png" alt="">
+                        </div>
+                        <div class="item__content">
+                            <h4>Salad</h4>
+                            <p>Eat luctus est vestibulum vel. Integer pulvinar nibh quis diam ullamcorper.</p>
+                            <div class="item__content-price">
+                                <span class="price__money">
+                                    $ &nbsp 8.59
+                                </span>
+                                <button>add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__btn">
+                <button>view more</button>
+            </div>
+        </div>
+    </section>
+    <!-- End menu food -->
+
+    <!-- Start About  -->
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="about__content motionX">
+                        <h3>About us</h3>
+                        <h2>Best Food In Your City</h2>
+                        <p>Nam et felis et lorem suscipit luctus et eu nisl. Praesent vestibulum, augue sed volutpat egestas, tortor enim efficitur mauris, id sodales velit augue sed ligula. Vestibulum eu ullamcorper orci.</p>
+                        <p>Hello world this is something is going in this world which is not good for Etiam mattis ante metus, quis vulputate est malesuada non. Proin blandit urna nulla, ac tincidunt sapien pharetra nec. Nulla a faucibus odio. Duis tincidunt arcu vel pretium ultrices</p>
+                        <button>read more</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="about__img motionX">
+                        <img src="assets/images/about.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About  -->
+
+    <!-- Start Services  -->
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="services__img motionX">
+                        <img src="assets/images/services.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="services__content motionX">
+                        <h3>Our services</h3>
+                        <h2>Book Yourd Next Order Now</h2>
+                        <p>Nam et felis et lorem suscipit luctus et eu nisl. Praesent vestibulum, augue sed volutpat egestas, tortor enim efficitur mauris, id sodales velit augue sed ligula. Vestibulum eu ullamcorper orci.</p>
+                        <p>Hello world this is something is going in this world which is not good for Etiam mattis ante metus, quis vulputate est malesuada non. Proin blandit urna nulla, ac tincidunt sapien pharetra nec. Nulla a faucibus odio. Duis tincidunt arcu vel pretium ultrices</p>
+                        <button>read more</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services  -->
+
+    <!-- Start Contact  -->
+    <section class="contact">
+        <div class="container wraper">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="contact__img motionX">
+                        <img src="assets/images/cta.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="contact__content motionX">
+                        <h3>10% Cashback</h3>
+                        <h2>Now You Can Order From Mobile</h2>
+                        <p>Nam et felis et lorem suscipit luctus et eu nisl. Praesent vestibulum, augue sed volutpat egestas, tortor enim efficitur mauris, id sodales velit augue sed ligula. Vestibulum eu ullamcorper orci.</p>
+                        <div class="contact___content-btn">
+                            <a href="#" class="btn__googlePlay">
+                                <img src="assets/images/google-play.svg" alt="">
+                            </a>
+                            <a href="#" class="btn__appStore">
+                                <img src="assets/images/apple-store.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact  -->
+
+    <!-- Start Footer  -->
+    <footer>
+        <div class="container main">
+            <div class="row wraper">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <a href="#" class="main__logo">
+                        <img src="assets/images/logo.svg" alt="">
+                    </a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sodales ultrices est sit amet malesuada. Donec malesuada elementum sem, vel interdum urna fringilla quis. Donec fermentum nulla ac venenatis tincidunt. Aenean nec cursus urna.
+                    </p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="main__infor">
+                        <h5>Useful links</h5>
+                        <ul class="main__infor-content">
+                            <li class="content__item">
+                                <a href="#">home</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">about us</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">services</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">get application</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="main__infor">
+                        <h5>Legal</h5>
+                        <ul class="main__infor-content">
+                            <li class="content__item">
+                                <a href="#">Privacy Policy</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Terms & Conditions</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Help</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="main__infor">
+                        <h5>Contact Us</h5>
+                        <ul class="main__infor-content">
+                            <li class="content__item">
+                                <a href="#">+92 123211</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Hello@Foodie.Order</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Help@Foodie.Order</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Cashback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 ">
+                    <div class="main__infor main__margin">
+                        <h5>Social media</h5>
+                        <ul class="main__infor-content">
+                            <li class="content__item">
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Twitter</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Instagram</a>
+                            </li>
+                            <li class="content__item">
+                                <a href="#">Youtube</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                    <div class="main__infor main__sub main__margin">
+                        <h5>Follow us</h5>
+                        <p class="main__infor-follow">Enter email to subscribe to receive useful information about learning from Foodiee</p>
+                        <input type="email" name="email" placeholder="Your email...">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copy">
+                Copyright © 2021 <a href="#">foodie.order</a> All rights reserved
+            </div>
+        </div>
+    </footer>
+    <!-- End footer  -->
+
+    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/landpage.js"></script>
+</body>
+</html>
