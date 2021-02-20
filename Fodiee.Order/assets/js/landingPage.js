@@ -4,6 +4,7 @@ const scrollAnimate = {
             const heightScroll = pageYOffset;
             this.showButton(heightScroll);
             this.menuAnimation(heightScroll);
+            // this.fixedBody();
         })
     },
     
@@ -56,7 +57,23 @@ const scrollAnimate = {
             rangeTops.push(section[index].offsetTop - 196);
         };
         return rangeTops;
-    }
+    },
+
+    // fixedBody(){
+    //     const body = domElement.get('body');
+    //     const open = domElement.get('.mobile__iconBars');
+    //     const close = domElement.get('.top__close');
+
+    //     open.onclick = (e) => {
+    //         e.preventDefault();
+    //         body.style.overflow = 'hidden';
+    //     }
+
+    //     close.onclick = (e) => {
+    //         e.preventDefault();
+    //         body.style.overflow = 'auto';
+    //     }
+    // }
 }
 
 const domElement = {

@@ -337,7 +337,7 @@ header {
                 bottom: 0;
                 left: 0;
                 background-color: rgba(0, 0, 0, 0.3);
-                z-index: 99;
+                z-index: 9999;
                 opacity: 0;
                 visibility: hidden;
             }
@@ -904,7 +904,7 @@ footer {
         opacity: 0;
         visibility: hidden;
         transition: $animate;
-        z-index: 9999;
+        z-index: 99;
         &::before{
             content: '';
             width: 45px;
@@ -997,10 +997,9 @@ footer {
 }
 
 @include mobile {
-
     h1,
     h2 {
-        font-size: $text-medium-up + 8px;
+        font-size: $text-medium-up + 10px;
     }
 
     h3 {
