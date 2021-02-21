@@ -9,6 +9,11 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+@media only screen and (max-width: 1023px) {
+  body.fixed {
+    overflow-y: hidden;
+  }
+}
 
 * {
   padding: 0;
@@ -77,6 +82,11 @@ header.fixed {
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
   height: 7vh;
   transition: all 0.4s ease-in-out;
+}
+@media only screen and (max-width: 767px) {
+  header.fixed {
+    height: 8vh;
+  }
 }
 header .container {
   height: 100%;
@@ -157,6 +167,7 @@ header .wraper .mobile {
 }
 header .wraper .mobile .mobile__iconBars {
   font-size: 2.5em;
+  display: block;
 }
 header .wraper .mobile .mobile__nav {
   width: 320px;
@@ -237,24 +248,22 @@ header .wraper .mobile .mobile__overlay {
   opacity: 0;
   visibility: hidden;
 }
-header .wraper .mobile .mobile__check {
-  display: none;
-  z-index: 0;
-}
-header .wraper .mobile .mobile__check:checked ~ .mobile__overlay {
+header .wraper .mobile .show {
   opacity: 1;
   visibility: visible;
 }
-header .wraper .mobile .mobile__check:checked ~ .mobile__nav {
+header .wraper .mobile .showMobileNav {
   visibility: visible;
   transform: translateX(0%);
 }
 
+section.restaurant {
+  padding: 8% 0;
+}
 section.restaurant .restaurant__wraper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8% auto;
 }
 @media only screen and (max-width: 767px) {
   section.restaurant .restaurant__wraper {
@@ -270,17 +279,20 @@ section.restaurant .restaurant__wraper .restaurant__wraper-content .content__tex
     width: 100%;
   }
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom {
+  width: 100%;
+}
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search {
   padding: 5% 0;
   width: 80%;
   position: relative;
 }
 @media only screen and (max-width: 1023px) {
-  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search {
+  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search {
     width: 100%;
   }
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search input {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search input {
   width: 85%;
   padding: 20px;
   border-radius: 50px;
@@ -289,11 +301,11 @@ section.restaurant .restaurant__wraper .restaurant__wraper-content .content__sea
   background-color: #fdf1f3;
 }
 @media only screen and (max-width: 767px) {
-  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search input {
+  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search input {
     width: 100%;
   }
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search button.content__search-btn {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search button.search__btn {
   cursor: pointer;
   color: #ffffff;
   background-color: #ed5a6c;
@@ -306,35 +318,36 @@ section.restaurant .restaurant__wraper .restaurant__wraper-content .content__sea
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease-in-out;
   position: absolute;
-  top: 32%;
+  top: 30%;
+  bottom: 30%;
   right: 17%;
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search button.content__search-btn:hover {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search button.search__btn:hover {
   transform: scale(1.05);
   box-shadow: 0px 10px 20px rgba(237, 90, 108, 0.4);
 }
 @media only screen and (max-width: 767px) {
-  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search button.content__search-btn {
-    top: 28%;
-    bottom: 28%;
+  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search button.search__btn {
+    top: 26%;
+    bottom: 26%;
     right: 1%;
   }
 }
 @media only screen and (max-width: 575px) {
-  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__search button.content__search-btn {
+  section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-search button.search__btn {
     top: 25%;
     bottom: 25%;
   }
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__network {
-  margin: 10% 0;
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-network {
+  padding: 10% 0;
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__network a {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-network a {
   text-align: center;
   margin: 15px;
   z-index: 4;
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__network a i {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-network a i {
   color: #2e050a;
   background-color: #ffffff;
   width: 45px;
@@ -345,7 +358,7 @@ section.restaurant .restaurant__wraper .restaurant__wraper-content .content__net
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease-in-out;
 }
-section.restaurant .restaurant__wraper .restaurant__wraper-content .content__network a:hover i {
+section.restaurant .restaurant__wraper .restaurant__wraper-content .content__bottom .content__bottom-network a:hover i {
   background-color: #fdf1f3;
 }
 section.restaurant .restaurant__wraper .restaurant__wraper-img {
@@ -364,7 +377,7 @@ section.restaurant .restaurant__wraper .restaurant__wraper-img {
 
 section.menu {
   text-align: center;
-  margin-bottom: 10%;
+  padding: 10% 0;
 }
 section.menu .menu__content {
   margin: 7%;
@@ -569,6 +582,11 @@ section.contact .wraper {
   background-color: #2e050a;
   border-radius: 10px;
   padding: 5%;
+}
+@media only screen and (max-width: 1023px) {
+  section.contact .wraper .part {
+    align-items: center;
+  }
 }
 section.contact .wraper .contact__content {
   margin: 12% 0;
@@ -787,7 +805,7 @@ footer .copy a {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease-in-out;
-  z-index: 9999;
+  z-index: 99;
   cursor: pointer;
 }
 .mobile button.scrollUp img {
@@ -876,7 +894,11 @@ footer .copy a {
   }
 }
 
-.motionX.inMotionLeft {
+.hidden {
+  display: none;
+}
+
+.in-left {
   animation: inRight 1s ease-in-out;
 }
 @keyframes inRight {
@@ -889,7 +911,8 @@ footer .copy a {
     transform: translateX(0);
   }
 }
-.motionX.inMotionRight {
+
+.in-right {
   animation: inLeft 1s ease-in-out;
 }
 @keyframes inLeft {
@@ -903,14 +926,44 @@ footer .copy a {
   }
 }
 
-.motionY.downMotion {
+.in-down1 {
   animation: downMotion 1s ease-in-out;
   animation-delay: 0;
 }
 @keyframes downMotion {
   from {
     opacity: 0;
-    transform: translateY(-100px);
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.in-down2 {
+  animation: downMotion 1s ease-in-out;
+  animation-delay: 0.4s;
+}
+@keyframes downMotion {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.in-down3 {
+  animation: downMotion 1s ease-in-out;
+  animation-delay: 0.8s;
+}
+@keyframes downMotion {
+  from {
+    opacity: 0;
+    transform: translateY(-150px);
   }
   to {
     opacity: 1;
@@ -922,6 +975,7 @@ footer .copy a {
   h1,
 h2 {
     font-size: 45px;
+    padding: 6% 0;
   }
 
   h4 {

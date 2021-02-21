@@ -88,6 +88,7 @@ $animate: all 0.4s ease-in-out;
 
 @mixin inMotionScrollY($from, $to, $delay) {
     animation: downMotion 1s ease-in-out;
+
     animation-delay: $delay;
 
     @keyframes downMotion {
@@ -158,6 +159,11 @@ body {
     color: $color-pink-bold;
     position: relative;
     overflow-x: hidden;
+    &.fixed {
+        @include tablet{
+            overflow-y: hidden;
+        }
+    }
 }
 
 * {
@@ -227,6 +233,10 @@ header {
         box-shadow: $box-shadow-main;
         height: 7vh;
         transition: $animate;
+        @include mobile{
+            height: 8vh;
+        }
+    
     }
 
     .container {
@@ -280,6 +290,7 @@ header {
 
             .mobile__iconBars {
                 font-size: 2.5em;
+                display: block;
             }
 
             .mobile__nav {
@@ -340,19 +351,12 @@ header {
                 z-index: 9999;
                 opacity: 0;
                 visibility: hidden;
-            }
-
-            .mobile__check {
-                display: none;
-                z-index: 0;
-            }
-
-            .mobile__check:checked~.mobile__overlay {
+            }      
+            .show{
                 opacity: 1;
                 visibility: visible;
-            }
-
-            .mobile__check:checked~.mobile__nav {
+            }   
+            .showMobileNav{
                 visibility: visible;
                 transform: translateX(0%);
             }
@@ -363,9 +367,9 @@ header {
 //Restaurant
 section {
     &.restaurant {
+        padding: 8% 0;
         .restaurant__wraper {
             @include flex-box;
-            margin: 8% auto;
 
             @include mobile {
                 flex-direction: column;
@@ -382,71 +386,75 @@ section {
 
                 }
 
-                .content__search {
-                    padding: 5% 0;
-                    width: 80%;
-                    position: relative;
-
-                    @include tablet {
-                        width: 100%;
-                    }
-
-                    input {
-                        width: 85%;
-                        padding: 20px;
-                        border-radius: 50px;
-                        outline: none;
-                        border: none;
-                        background-color: $color-pink-light;
-
-                        @include mobile {
+                .content__bottom{
+                    width: 100%;
+                    .content__bottom-search {
+                        padding: 5% 0;
+                        width: 80%;
+                        position: relative;
+    
+                        @include tablet {
                             width: 100%;
                         }
+    
+                        input {
+                            width: 85%;
+                            padding: 20px;
+                            border-radius: 50px;
+                            outline: none;
+                            border: none;
+                            background-color: $color-pink-light;
+    
+                            @include mobile {
+                                width: 100%;
+                            }
+                        }
+    
+                        button.search__btn {
+                            @include button;
+                            position: absolute;
+                            top: 30%;
+                            bottom: 30%;
+                            right: 17%;
+    
+                            @include mobile {
+                                top: 26%;
+                                bottom: 26%;
+                                right: 1%;
+                            }
+    
+                            @include mobile-small {
+                                top: 25%;
+                                bottom: 25%;
+                            }
+                        }
                     }
-
-                    button.content__search-btn {
-                        @include button;
-                        position: absolute;
-                        top: 32%;
-                        right: 17%;
-
-                        @include mobile {
-                            top: 28%;
-                            bottom: 28%;
-                            right: 1%;
-                        }
-
-                        @include mobile-small {
-                            top: 25%;
-                            bottom: 25%;
-                        }
-                    }
-                }
-
-                .content__network {
-                    margin: 10% 0;
-
-                    a {
-                        text-align: center;
-                        margin: 15px;
-                        z-index: 4;
-
-                        i {
-                            color: $color-black-light;
-                            background-color: #ffffff;
-                            width: 45px;
-                            height: 45px;
-                            line-height: 45px;
-                            font-size: 18px;
-                            border-radius: 50%;
-                            box-shadow: $box-shadow-main;
-                            transition: $animate;
-                            // border: 1px solid #000;
-                        }
-
-                        &:hover {
+    
+                    .content__bottom-network {
+                        padding: 10% 0;
+    
+                        a {
+                            text-align: center;
+                            margin: 15px;
+                            z-index: 4;
+    
                             i {
-                                background-color: $color-pink-light;
+                                color: $color-black-light;
+                                background-color: #ffffff;
+                                width: 45px;
+                                height: 45px;
+                                line-height: 45px;
+                                font-size: 18px;
+                                border-radius: 50%;
+                                box-shadow: $box-shadow-main;
+                                transition: $animate;
+                                // border: 1px solid #000;
+                            }
+    
+                            &:hover {
+                                i {
+                                    background-color: $color-pink-light;
+                                }
                             }
                         }
                     }
@@ -472,7 +480,7 @@ section {
 section {
     &.menu {
         text-align: center;
-        margin-bottom: 10%;
+        padding: 10% 0;
 
         .menu__content {
             margin: 7%;
@@ -650,7 +658,11 @@ section {
             background-color: $color-black-light;
             border-radius: 10px;
             padding: 5%;
-
+            .part{
+                @include tablet{
+                    align-items:center;
+                }
+            }
             .contact__content {
                 margin: 12% 0;
 
@@ -875,7 +887,7 @@ footer {
         opacity: 0;
         visibility: hidden;
         transition: $animate;
-        z-index: 9999;
+        z-index: 99;
         cursor: pointer;
     
         img {
@@ -965,26 +977,34 @@ footer {
     }
 }
 
-.motionX {
-    &.inMotionLeft {
-        @include inMotionScrollX(-150px, 0);
-    }
-
-    &.inMotionRight {
-        @include inMotionScrollX(150px, 0);
-    }
+//Class Dom Element
+.hidden{
+    display: none;
 }
 
-.motionY {
-    &.downMotion {
-        @include inMotionScrollY(-100px, 0px, 0)
-    }
+.in-left {
+    @include inMotionScrollX(-150px, 0);
+}
+
+.in-right {
+    @include inMotionScrollX(150px, 0);
+}
+
+.in-down1 {
+    @include inMotionScrollY(-150px, 0px, 0);
+}
+.in-down2 {
+    @include inMotionScrollY(-150px, 0px, 0.4s);
+}
+.in-down3 {
+    @include inMotionScrollY(-150px, 0px, 0.8s);
 }
 
 @include tablet {
     h1,
     h2 {
         font-size: $text-large-down;
+        padding: 6% 0;
     }
 
     h4 {
