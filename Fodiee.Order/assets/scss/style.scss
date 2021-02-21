@@ -54,7 +54,7 @@ $animate: all 0.4s ease-in-out;
 
 @mixin inMotionScrollX($from, $to) {
     @if ($from > 0) {
-        animation: inLeft .6s ease-in-out;
+        animation: inLeft .4s linear;
 
         @keyframes inLeft {
             from {
@@ -72,7 +72,7 @@ $animate: all 0.4s ease-in-out;
     }
 
     @else {
-        animation: inRight .6s ease-in-out;
+        animation: inRight .4s linear;
 
         @keyframes inRight {
             from {
@@ -91,7 +91,7 @@ $animate: all 0.4s ease-in-out;
 }
 
 @mixin inMotionScrollY($from, $to, $delay) {
-    animation: downMotion 0.6s ease-in-out;
+    animation: downMotion 0.4s ease-in-out;
 
     animation-delay: $delay;
 
@@ -371,7 +371,7 @@ header {
 //Restaurant
 section {
     &.restaurant {
-        padding: 8% 0;
+        padding: 5% 0;
         .restaurant__wraper {
             @include flex-box;
 
@@ -484,7 +484,7 @@ section {
 section {
     &.menu {
         text-align: center;
-        padding: 10% 0;
+        padding: 5% 0;
 
         .menu__content {
             margin: 7%;
@@ -656,7 +656,7 @@ section {
 //Contact
 section {
     &.contact {
-        padding: 5% 0;
+        margin: 5% 0;
 
         .wraper {
             background-color: $color-black-light;
@@ -716,7 +716,7 @@ section {
 //Footer
 footer {
     background-color: $color-pink-light;
-
+    margin-top: 10%;
     .main {
         .wraper {
             padding: 10% 0 5%;

@@ -258,7 +258,7 @@ header .wraper .mobile .showMobileNav {
 }
 
 section.restaurant {
-  padding: 8% 0;
+  padding: 5% 0;
 }
 section.restaurant .restaurant__wraper {
   display: flex;
@@ -377,7 +377,7 @@ section.restaurant .restaurant__wraper .restaurant__wraper-img {
 
 section.menu {
   text-align: center;
-  padding: 10% 0;
+  padding: 5% 0;
 }
 section.menu .menu__content {
   margin: 7%;
@@ -576,7 +576,7 @@ section.services .services__img img {
 }
 
 section.contact {
-  padding: 5% 0;
+  margin: 5% 0;
 }
 section.contact .wraper {
   background-color: #2e050a;
@@ -629,6 +629,7 @@ section.contact .wraper .contact__content .contact___content-btn a.btn__googlePl
 
 footer {
   background-color: #fdf1f3;
+  margin-top: 10%;
 }
 footer .main .wraper {
   padding: 10% 0 5%;
@@ -899,7 +900,7 @@ footer .copy a {
 }
 
 .in-left {
-  animation: inRight 0.6s ease-in-out;
+  animation: inRight 0.4s linear;
 }
 @keyframes inRight {
   from {
@@ -915,7 +916,7 @@ footer .copy a {
 }
 
 .in-right {
-  animation: inLeft 0.6s ease-in-out;
+  animation: inLeft 0.4s linear;
 }
 @keyframes inLeft {
   from {
@@ -931,7 +932,7 @@ footer .copy a {
 }
 
 .in-down1 {
-  animation: downMotion 0.6s ease-in-out;
+  animation: downMotion 0.4s ease-in-out;
   animation-delay: 0;
 }
 @keyframes downMotion {
@@ -946,7 +947,7 @@ footer .copy a {
 }
 
 .in-down2 {
-  animation: downMotion 0.6s ease-in-out;
+  animation: downMotion 0.4s ease-in-out;
   animation-delay: 0.2s;
 }
 @keyframes downMotion {
@@ -961,7 +962,7 @@ footer .copy a {
 }
 
 .in-down3 {
-  animation: downMotion 0.6s ease-in-out;
+  animation: downMotion 0.4s ease-in-out;
   animation-delay: 0.4s;
 }
 @keyframes downMotion {

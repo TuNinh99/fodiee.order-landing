@@ -7,6 +7,7 @@ const scrollAnimate = {
         });
         this.mobileMenu();
         this.runPartsAnimate();
+        this.changeItemClick();
     },
     
     //click btn to Top => scroll to Top
@@ -23,7 +24,7 @@ const scrollAnimate = {
         heightScroll > heightScreen ? domElement.add('.scrollUp', 'showScrollTopBtn') : domElement.remove('.scrollUp', 'showScrollTopBtn')
     },
 
-    //Navigation animation
+    //Navigation animate
     menuAnimation(heightScroll){
         this.fixedMenu(heightScroll);
         this.changeItemScroll(heightScroll);
@@ -36,8 +37,9 @@ const scrollAnimate = {
     changeItemScroll(heightScroll){
         const navItems = domElement.gets('.navbar__item');
         const navMobileItems = domElement.gets('.mobile__navbar-item');
-        this.offsetsTop().ranges.map((rangeTop, index) => {
-            if(heightScroll > rangeTop){ 
+        // console.log(this.offsetsTop().rangesHeader);
+        this.offsetsTop().rangesHeader.map((rangesHeader, index) => {
+            if(heightScroll > rangesHeader){ 
                 domElement.removeElements(navItems, 'active');
                 domElement.addElement(navItems[index], 'active');
 
@@ -47,29 +49,56 @@ const scrollAnimate = {
         })
     },
 
+    changeItemClick(){
+        const navItems = domElement.gets('.navbar__item');
+        const navMobileItems = domElement.gets('.mobile__navbar-item');
+        const offsetTop = scrollAnimate.offsetsTop().rangesCenter;
+
+        if(screen.width > 1023){
+            for (let index = 0; index < navItems.length; index++) {
+                navItems[index].onclick = (e) => {
+                    e.preventDefault();
+                    window.scrollTo({top: offsetTop[index], behavior: 'smooth'});
+                }
+            };
+        }else{
+            for (let index = 0; index < navMobileItems.length; index++) {
+                navMobileItems[index].onclick = (e) => {
+                    e.preventDefault();
+                    this.closeMenu();
+                    window.scrollTo({top: offsetTop[index], behavior: 'smooth'});
+                }
+            };
+        }
+    },
+
     offsetsTop(){
         const sections = domElement.gets('section');
         const widthScreen = screen.width;
         const rangeTops = [];
-        const ranges = [];
+        const rangesHeader = [];
+        const rangesCenter = [];
 
         for (let index = 0; index < sections.length; index++) {
-            if(widthScreen < 1024){
+            if(widthScreen < 768){
                 rangeTops.push(sections[index].offsetTop - sections[index].offsetHeight) + screen.height;
             }else{
                 rangeTops.push(sections[index].offsetTop - sections[index].offsetHeight - 250);
             }
-            ranges.push(sections[index].offsetTop);
+            rangesHeader.push(sections[index].offsetTop - 350);
+            rangesCenter.push(sections[index].offsetTop);
         };
         return {
-            rangeTops: rangeTops,
-            ranges: ranges
+            rangeTops,
+            rangesHeader,
+            rangesCenter
         };
     },
 
     mobileMenu(){
         const open = domElement.get('.mobile__iconBars');
         const close = domElement.get('.top__close');
+        const overlay = domElement.get('.mobile__overlay');
 
         open.onclick = (e) => {
             e.preventDefault();
@@ -82,17 +111,28 @@ const scrollAnimate = {
 
         close.onclick = (e) => {
             e.preventDefault();
-            domElement.remove('body', 'fixed');
-            domElement.remove('.mobile__overlay', 'show');
-            domElement.remove('.mobile__nav', 'showMobileNav');
-            domElement.remove('.book', 'hidden');
+            this.closeMenu();
+        }
+
+        overlay.onclick = (e) => {
+            e.preventDefault();
+            this.closeMenu();
         }
     },
 
+    closeMenu(){
+        domElement.remove('body', 'fixed');
+        domElement.remove('.mobile__overlay', 'show');
+        domElement.remove('.mobile__nav', 'showMobileNav');
+        domElement.remove('.book', 'hidden');
+    },
+
     runPartsAnimate(){
-        window.addEventListener("load", this.handlerPartsAnimate);
-        window.addEventListener("resize", this.handlerPartsAnimate);
-        window.addEventListener("scroll", this.handlerPartsAnimate);
+        if(screen.width > 767){
+            window.addEventListener("load", this.handlerPartsAnimate);
+            window.addEventListener("resize", this.handlerPartsAnimate);
+            window.addEventListener("scroll", this.handlerPartsAnimate);
+        }
     },
 
     handlerPartsAnimate(){
@@ -174,6 +214,7 @@ const domElement = {
 }
 
 scrollAnimate.run();
+
 
 
 
