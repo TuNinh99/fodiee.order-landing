@@ -17,11 +17,9 @@ const scrollAnimate = {
     // Method show Button to Top affter scroll
     showButton(heightScroll){
         const heightScreen = screen.height;
-
         domElement.get('.scrollUp').onclick = () =>{
             window.scrollTo({top: 0, behavior: 'smooth'});
         };
-
         heightScroll > heightScreen ? domElement.add('.scrollUp', 'showScrollTopBtn') : domElement.remove('.scrollUp', 'showScrollTopBtn')
     },
 
@@ -42,19 +40,25 @@ const scrollAnimate = {
             if(heightScroll > rangeTop){ 
                 domElement.removeElements(navItems, 'active');
                 domElement.addElement(navItems[index], 'active');
-            }else{
 
-            };
+                domElement.removeElements(navMobileItems, 'active');
+                domElement.addElement(navMobileItems[index], 'active');
+            }
         })
     },
 
     offsetsTop(){
         const sections = domElement.gets('section');
+        const widthScreen = screen.width;
         const rangeTops = [];
         const ranges = [];
 
         for (let index = 0; index < sections.length; index++) {
-            rangeTops.push(sections[index].offsetTop - sections[index].offsetHeight - 250);
+            if(widthScreen < 1024){
+                rangeTops.push(sections[index].offsetTop - sections[index].offsetHeight) + screen.height;
+            }else{
+                rangeTops.push(sections[index].offsetTop - sections[index].offsetHeight - 250);
+            }
             ranges.push(sections[index].offsetTop);
         };
         return {
@@ -170,4 +174,7 @@ const domElement = {
 }
 
 scrollAnimate.run();
+
+
+
 

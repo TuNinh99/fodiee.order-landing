@@ -899,35 +899,39 @@ footer .copy a {
 }
 
 .in-left {
-  animation: inRight 1s ease-in-out;
+  animation: inRight 0.6s ease-in-out;
 }
 @keyframes inRight {
   from {
     opacity: 0;
+    visibility: hidden;
     transform: translateX(-150px);
   }
   to {
     opacity: 1;
+    visibility: visible;
     transform: translateX(0);
   }
 }
 
 .in-right {
-  animation: inLeft 1s ease-in-out;
+  animation: inLeft 0.6s ease-in-out;
 }
 @keyframes inLeft {
   from {
     opacity: 0;
+    visibility: hidden;
     transform: translateX(150px);
   }
   to {
     opacity: 1;
+    visibility: visible;
     transform: translateX(0);
   }
 }
 
 .in-down1 {
-  animation: downMotion 1s ease-in-out;
+  animation: downMotion 0.6s ease-in-out;
   animation-delay: 0;
 }
 @keyframes downMotion {
@@ -942,8 +946,8 @@ footer .copy a {
 }
 
 .in-down2 {
-  animation: downMotion 1s ease-in-out;
-  animation-delay: 0.4s;
+  animation: downMotion 0.6s ease-in-out;
+  animation-delay: 0.2s;
 }
 @keyframes downMotion {
   from {
@@ -957,8 +961,8 @@ footer .copy a {
 }
 
 .in-down3 {
-  animation: downMotion 1s ease-in-out;
-  animation-delay: 0.8s;
+  animation: downMotion 0.6s ease-in-out;
+  animation-delay: 0.4s;
 }
 @keyframes downMotion {
   from {

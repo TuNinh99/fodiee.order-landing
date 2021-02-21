@@ -54,32 +54,36 @@ $animate: all 0.4s ease-in-out;
 
 @mixin inMotionScrollX($from, $to) {
     @if ($from > 0) {
-        animation: inLeft 1s ease-in-out;
+        animation: inLeft .6s ease-in-out;
 
         @keyframes inLeft {
             from {
                 opacity: 0;
+                visibility: hidden;
                 transform: translateX($from);
             }
 
             to {
                 opacity: 1;
+                visibility: visible;
                 transform: translateX($to);
             }
         }
     }
 
     @else {
-        animation: inRight 1s ease-in-out;
+        animation: inRight .6s ease-in-out;
 
         @keyframes inRight {
             from {
                 opacity: 0;
+                visibility: hidden;
                 transform: translateX($from);
             }
 
             to {
                 opacity: 1;
+                visibility: visible;
                 transform: translateX($to);
             }
         }
@@ -87,7 +91,7 @@ $animate: all 0.4s ease-in-out;
 }
 
 @mixin inMotionScrollY($from, $to, $delay) {
-    animation: downMotion 1s ease-in-out;
+    animation: downMotion 0.6s ease-in-out;
 
     animation-delay: $delay;
 
@@ -994,10 +998,10 @@ footer {
     @include inMotionScrollY(-150px, 0px, 0);
 }
 .in-down2 {
-    @include inMotionScrollY(-150px, 0px, 0.4s);
+    @include inMotionScrollY(-150px, 0px, 0.2s);
 }
 .in-down3 {
-    @include inMotionScrollY(-150px, 0px, 0.8s);
+    @include inMotionScrollY(-150px, 0px, 0.4s);
 }
 
 @include tablet {
